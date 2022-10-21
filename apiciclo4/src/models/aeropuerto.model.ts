@@ -1,4 +1,5 @@
 import {Entity, model, property} from '@loopback/repository';
+//import PropTypes from 'prop-types';
 
 @model()
 export class Aeropuerto extends Entity {
@@ -51,6 +52,7 @@ export class Aeropuerto extends Entity {
   @property({
     type: 'string',
     required: true,
+    //optionalEnum: PropTypes.oneOf(['Internacional', 'Nacional']),
   })
   tipo: string;
 
