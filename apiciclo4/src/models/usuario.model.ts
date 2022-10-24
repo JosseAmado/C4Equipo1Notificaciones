@@ -23,7 +23,10 @@ export class Usuario extends Entity {
 
   @property({
     type: 'string',
-    required: true,
+    required: true, 
+    index: {
+      unique: true,
+    },
   })
   correo: string;
 
@@ -31,14 +34,7 @@ export class Usuario extends Entity {
     type: 'string',
     required: true,
   })
-  telefono: string;
-
-  @property({
-    type: 'string',
-    required: true,
-  })
-  password: string;
-
+  contraseña: string;
 
   constructor(data?: Partial<Usuario>) {
     super(data);

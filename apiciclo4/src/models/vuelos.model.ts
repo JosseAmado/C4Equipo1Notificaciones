@@ -1,8 +1,7 @@
 import {Entity, model, property} from '@loopback/repository';
-//import PropTypes from 'prop-types';
 
 @model()
-export class Aeropuerto extends Entity {
+export class Vuelos extends Entity {
   @property({
     type: 'string',
     id: true,
@@ -14,56 +13,52 @@ export class Aeropuerto extends Entity {
     type: 'string',
     required: true,
   })
-  nombre: string;
+  fecha_inicio: string;
 
   @property({
     type: 'string',
     required: true,
   })
-  ciudad: string;
+  hora_inicio: string;
 
   @property({
     type: 'string',
     required: true,
   })
-  pais: string;
+  fecha_fin: string;
 
   @property({
     type: 'string',
     required: true,
   })
-  coord_x: string;
+  hora_fin: string;
 
   @property({
     type: 'string',
     required: true,
   })
-  coord_y: string;
+  asientos_vendidos: string;
 
   @property({
     type: 'string',
     required: true,
-    index: {
-      unique: true,
-    },
   })
-  siglas: string;
+  nombre_piloto: string;
 
   @property({
     type: 'string',
     required: true,
-    //optionalEnum: PropTypes.oneOf(['Internacional', 'Nacional']),
   })
-  tipo: string;
+  ruta: string;
 
 
-  constructor(data?: Partial<Aeropuerto>) {
+  constructor(data?: Partial<Vuelos>) {
     super(data);
   }
 }
 
-export interface AeropuertoRelations {
+export interface VuelosRelations {
   // describe navigational properties here
 }
 
-export type AeropuertoWithRelations = Aeropuerto & AeropuertoRelations;
+export type VuelosWithRelations = Vuelos & VuelosRelations;
